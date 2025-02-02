@@ -43,8 +43,8 @@ MonoBehaviour:
     y: 0
     width: 458
     height: 327
-  m_MinSize: {x: 202, y: 226}
-  m_MaxSize: {x: 4002, y: 4026}
+  m_MinSize: {x: 201, y: 226}
+  m_MaxSize: {x: 4001, y: 4026}
   m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 18}
@@ -74,7 +74,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 100}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 1561
+  controlID: 99
   draggingID: 0
 --- !u!114 &4
 MonoBehaviour:
@@ -880,7 +880,7 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: 878.57666, y: 331.97522, z: 842.8131}
+    m_Target: {x: 187.3373, y: 82.89564, z: -9.309502}
     speed: 2
     m_Value: {x: 878.57666, y: 331.97522, z: 842.8131}
   m_RenderMode: 0
@@ -928,11 +928,11 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.14207464, y: 0.62341714, z: -0.11654338, w: 0.75998944}
+    m_Target: {x: -0.012064054, y: 0.98085237, z: -0.18336348, w: -0.064533755}
     speed: 2
-    m_Value: {x: 0.14259762, y: 0.61999077, z: -0.11590284, w: 0.7627869}
+    m_Value: {x: 0.14207464, y: 0.6234171, z: -0.116543375, w: 0.7599894}
   m_Size:
-    m_Target: 1886.4832
+    m_Target: 47.52987
     speed: 2
     m_Value: 1886.4832
   m_Ortho:
@@ -1004,9 +1004,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 34b50000
+      m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: c0ceffff24efffff12f8ffff6ab5000088b50000aab50000
+      m_ExpandedIDs: 08fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1078,7 +1078,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets/Models/1
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -1088,16 +1088,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/Models/1
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\UCE\5 semestre\infraestructura 2\unity\Planta\Planta_Grupo
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 79}
-    m_SelectedIDs: a6b40000
-    m_LastClickedID: 46246
-    m_ExpandedIDs: 000000004ab40000a2b4000000ca9a3bffffff7f
+    m_SelectedIDs: b2b30000
+    m_LastClickedID: 46002
+    m_ExpandedIDs: 00000000a0b100004cb3000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1126,7 +1126,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000004ab40000
+    m_ExpandedIDs: 00000000a0b10000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
