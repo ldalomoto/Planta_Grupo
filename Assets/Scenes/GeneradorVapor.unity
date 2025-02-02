@@ -833,6 +833,9 @@ MonoBehaviour:
   steamOutlet: {fileID: 0}
   collector: {fileID: 0}
   steamParticles: {fileID: 0}
+  bubbleParticles: {fileID: 0}
+  bubbleTemperatureThreshold: 50
+  maxBubbleEmissionRate: 20
   waterLevelText: {fileID: 0}
   temperatureText: {fileID: 0}
   steamPressureText: {fileID: 0}
@@ -5788,6 +5791,9 @@ MonoBehaviour:
   steamOutlet: {fileID: 896008932399320300}
   collector: {fileID: 951655050545309985}
   steamParticles: {fileID: 1702769374}
+  bubbleParticles: {fileID: 0}
+  bubbleTemperatureThreshold: 50
+  maxBubbleEmissionRate: 20
   waterLevelText: {fileID: 49929125}
   temperatureText: {fileID: 144302889}
   steamPressureText: {fileID: 491976619}
@@ -5898,8 +5904,8 @@ Transform:
   m_GameObject: {fileID: 2124482776}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -72.1, y: 273.5, z: -6.3}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalPosition: {x: -18.5, y: 165.5, z: -6.3}
+  m_LocalScale: {x: 60, y: 110, z: 60}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 543450653644360421}
@@ -6050,6 +6056,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 262448071977022874}
+  - {fileID: 2124482777}
   - {fileID: 9058880022091068504}
   - {fileID: 7665602222602253502}
   - {fileID: 8330859279924760199}
@@ -6058,7 +6065,6 @@ Transform:
   - {fileID: 2474775818846879144}
   - {fileID: 3977089063504019809}
   - {fileID: 574186896}
-  - {fileID: 2124482777}
   - {fileID: 1702769375}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

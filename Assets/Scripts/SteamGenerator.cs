@@ -3,30 +3,36 @@ using UnityEngine.UI;
 
 public class SteamGenerator : MonoBehaviour
 {
-    public float waterLevel = 50.0f; // Nivel de agua inicial
-    public float waterInputRate = 5.0f; // Tasa de entrada de agua
-    public float heatTransferRate = 10.0f; // Tasa de transferencia de calor
-    public float temperature = 25.0f; // Temperatura inicial del agua
-    public float maxTemperature = 100.0f; // Temperatura m醲ima para generar vapor
-    public float steamProductionRate = 10.0f; // Tasa de producci髇 de vapor
-    public float maxSteamPressure = 100.0f; // Presi髇 m醲ima de vapor
-    public float currentSteamPressure = 0.0f; // Presi髇 actual de vapor
+    // Variables para el funcionamiento del generador de vapor
+    public float waterLevel = 50.0f;           // Nivel de agua inicial
+    public float waterInputRate = 5.0f;          // Tasa de entrada de agua
+    public float heatTransferRate = 10.0f;       // Tasa de transferencia de calor
+    public float temperature = 25.0f;            // Temperatura inicial
+    public float maxTemperature = 100.0f;        // Temperatura m谩xima para generar vapor
+    public float steamProductionRate = 10.0f;    // Tasa de producci贸n de vapor
+    public float maxSteamPressure = 100.0f;      // Presi贸n m谩xima de vapor
+    public float currentSteamPressure = 0.0f;    // Presi贸n actual de vapor
 
-    public bool isActive = false; // Estado del generador
+    public bool isActive = false;              // Estado del generador
 
-    // Referencias a objetos
-    public GameObject feedwaterInlet; // Entrada de agua
-    public GameObject heatExchangeTube; // Tubos de intercambio de calor
-    public GameObject steamOutlet; // Salida de vapor
-    public GameObject collector; // Colector de vapor
-    public ParticleSystem steamParticles; // Sistema de part韈ulas de vapor
+    // Referencias a objetos del sistema
+    public GameObject feedwaterInlet;          // Entrada de agua
+    public GameObject heatExchangeTube;        // Tubos de intercambio de calor
+    public GameObject steamOutlet;             // Salida de vapor
+    public GameObject collector;               // Colector de vapor
+    public ParticleSystem steamParticles;      // Sistema de part铆culas para vapor
 
-    // UI
+    // Sistema de part铆culas para simular burbujas en el agua
+    public ParticleSystem bubbleParticles;
+    public float bubbleTemperatureThreshold = 50.0f; // Temperatura a partir de la cual aparecen las burbujas
+    public float maxBubbleEmissionRate = 20.0f;        // Tasa m谩xima de emisi贸n de burbujas
+
+    // UI para mostrar informaci贸n
     public Text waterLevelText;
     public Text temperatureText;
     public Text steamPressureText;
 
-    // Objeto visual del agua (para cambiar tama駉/color)
+    // Objeto visual que representa el agua dentro del cilindro
     public GameObject waterVisual;
     private Renderer waterRenderer;
 
@@ -45,6 +51,7 @@ public class SteamGenerator : MonoBehaviour
             GenerateSteam();
             UpdateUI();
             UpdateWaterVisual();
+            UpdateBubbleEffect();
         }
         else
         {
@@ -52,9 +59,16 @@ public class SteamGenerator : MonoBehaviour
             {
                 steamParticles.Stop();
             }
+            if (bubbleParticles != null && bubbleParticles.isPlaying)
+            {
+                bubbleParticles.Stop();
+            }
         }
     }
 
+    /// <summary>
+    /// L贸gica para el calentamiento, generaci贸n de vapor y control del agua.
+    /// </summary>
     void GenerateSteam()
     {
         // Entrada de agua
@@ -67,16 +81,17 @@ public class SteamGenerator : MonoBehaviour
         if (heatExchangeTube != null && waterLevel > 0)
         {
             temperature += heatTransferRate * Time.deltaTime;
-            if (temperature > maxTemperature)
+
+            // Cuando se alcanza la temperatura m谩xima, se produce vapor
+            if (temperature >= maxTemperature)
             {
                 temperature = maxTemperature;
-                // Generaci髇 de vapor
                 currentSteamPressure += steamProductionRate * Time.deltaTime;
                 waterLevel -= steamProductionRate * Time.deltaTime;
             }
         }
 
-        // Control del vapor
+        // Control del sistema de part铆culas de vapor
         if (steamOutlet != null && currentSteamPressure > 0)
         {
             if (steamParticles != null && !steamParticles.isPlaying)
@@ -92,7 +107,7 @@ public class SteamGenerator : MonoBehaviour
             }
         }
 
-        // Control de presi髇
+        // Reducci贸n de presi贸n si se excede el l铆mite
         if (collector != null)
         {
             if (currentSteamPressure > maxSteamPressure)
@@ -102,35 +117,84 @@ public class SteamGenerator : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Actualiza la interfaz gr谩fica (UI) con el nivel de agua, temperatura y presi贸n de vapor.
+    /// </summary>
     void UpdateUI()
     {
         if (waterLevelText != null)
             waterLevelText.text = "Nivel de agua: " + waterLevel.ToString("F2");
 
         if (temperatureText != null)
-            temperatureText.text = "Temperatura: " + temperature.ToString("F2") + "癈";
+            temperatureText.text = "Temperatura: " + temperature.ToString("F2") + " 掳C";
 
         if (steamPressureText != null)
-            steamPressureText.text = "Presi髇 de vapor: " + currentSteamPressure.ToString("F2") + " kPa";
+            steamPressureText.text = "Presi贸n de vapor: " + currentSteamPressure.ToString("F2") + " kPa";
     }
 
+    /// <summary>
+    /// Actualiza la visualizaci贸n del agua dentro del cilindro.
+    /// Se ajusta la escala y posici贸n para que la base del agua permanezca fija.
+    /// Adem谩s, cambia el color del agua seg煤n la temperatura (de azul a rojo).
+    /// </summary>
     void UpdateWaterVisual()
     {
         if (waterVisual != null)
         {
-            // Ajustar altura del agua
-            waterVisual.transform.localScale = new Vector3(1, waterLevel / 100f, 1);
+            // Limitar el nivel de agua para que no exceda la altura interna del cilindro (suponiendo que 100 es el m谩ximo)
+            float nivelAguaClampeado = Mathf.Clamp(waterLevel, 0, 100);
+            float nuevaAltura = nivelAguaClampeado / 100f;
 
-            // Cambio de color seg鷑 temperatura
+            // Escalar el objeto del agua
+            //waterVisual.transform.localScale = new Vector3(1, nuevaAltura, 1);
+            // Ajustar la posici贸n para que la base se mantenga en Y = 0
+            //waterVisual.transform.localPosition = new Vector3(0, nuevaAltura / 2f, 0);
+
+            // Cambiar el color seg煤n la temperatura (azul a rojo)
+            
             if (waterRenderer != null)
             {
                 float t = temperature / maxTemperature;
                 Color waterColor = Color.Lerp(Color.blue, Color.red, t);
                 waterRenderer.material.color = waterColor;
             }
+            
         }
     }
 
+    /// <summary>
+    /// Actualiza el sistema de part铆culas de burbujas.
+    /// Las burbujas comienzan a aparecer cuando la temperatura supera el umbral definido.
+    /// Adem谩s, se ajusta la tasa de emisi贸n de burbujas en funci贸n de la temperatura.
+    /// </summary>
+    void UpdateBubbleEffect()
+    {
+        if (bubbleParticles != null)
+        {
+            // Si la temperatura es mayor o igual al umbral, se muestran burbujas
+            if (temperature >= bubbleTemperatureThreshold)
+            {
+                // Se calcula la tasa de emisi贸n proporcional al incremento de temperatura
+                var emission = bubbleParticles.emission;
+                float bubbleRate = Mathf.Lerp(0, maxBubbleEmissionRate, (temperature - bubbleTemperatureThreshold) / (maxTemperature - bubbleTemperatureThreshold));
+                emission.rateOverTime = bubbleRate;
+
+                if (!bubbleParticles.isPlaying)
+                {
+                    bubbleParticles.Play();
+                }
+            }
+            else
+            {
+                if (bubbleParticles.isPlaying)
+                {
+                    bubbleParticles.Stop();
+                }
+            }
+        }
+    }
+
+    // M茅todos para activar o desactivar el generador
     public void Activate()
     {
         isActive = true;
