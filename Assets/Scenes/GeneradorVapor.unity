@@ -424,7 +424,7 @@ Transform:
   m_GameObject: {fileID: 656376940}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -18.1, y: 358.2, z: -7.401886}
+  m_LocalPosition: {x: -18.1, y: 263.3, z: -7.401886}
   m_LocalScale: {x: 4, y: 1, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10125,7 +10125,7 @@ Transform:
   m_GameObject: {fileID: 887322001}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -22.5, y: 204, z: -10.9}
+  m_LocalPosition: {x: -17.9, y: 323.8, z: -10.9}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10475,8 +10475,8 @@ Transform:
   m_GameObject: {fileID: 1279759142}
   serializedVersion: 2
   m_LocalRotation: {x: -0.30997548, y: 0.39713126, z: 0.14454393, w: 0.85165083}
-  m_LocalPosition: {x: 5.299999, y: 25.978928, z: 12.42099}
-  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_LocalPosition: {x: -5.7, y: 40.9, z: 4.5}
+  m_LocalScale: {x: 15, y: 20, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 543450653644360421}
@@ -15556,8 +15556,8 @@ Transform:
   m_GameObject: {fileID: 1782035109}
   serializedVersion: 2
   m_LocalRotation: {x: -0.30997548, y: -0.39713126, z: -0.14454393, w: 0.85165083}
-  m_LocalPosition: {x: -38.8, y: 25.578918, z: 14.92099}
-  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_LocalPosition: {x: -29.6, y: 41.6, z: 4.8}
+  m_LocalScale: {x: 15, y: 20, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 543450653644360421}
@@ -15674,7 +15674,7 @@ MonoBehaviour:
   steamProductionRate: 10
   maxSteamPressure: 100
   currentSteamPressure: 0
-  isActive: 0
+  isActive: 1
   feedwaterInlet: {fileID: 7032581638970709468}
   heatExchangeTube: {fileID: 574186895}
   steamOutlet: {fileID: 896008932399320300}
