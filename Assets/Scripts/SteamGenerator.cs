@@ -66,7 +66,7 @@ public class SteamGenerator : MonoBehaviour
                 flowArrow1.transform.Translate(Vector3.up * 2.0f * Time.deltaTime);
                 if (flowArrow1.transform.position.y > 5.0f)
                 {
-                    flowArrow1.transform.position = new Vector3(flowArrow1.transform.position.x, 0.0f, flowArrow1.transform.position.z);
+                    //flowArrow1.transform.position = new Vector3(flowArrow1.transform.position.x, 0.0f, flowArrow1.transform.position.z);
                 }
             }
             if (flowArrow2 != null)
@@ -74,7 +74,7 @@ public class SteamGenerator : MonoBehaviour
                 flowArrow2.transform.Translate(Vector3.up * 2.0f * Time.deltaTime);
                 if (flowArrow2.transform.position.y > 5.0f)
                 {
-                    flowArrow2.transform.position = new Vector3(flowArrow2.transform.position.x, 0.0f, flowArrow2.transform.position.z);
+                    //flowArrow2.transform.position = new Vector3(flowArrow2.transform.position.x, 0.0f, flowArrow2.transform.position.z);
                 }
             }
         }
