@@ -22,6 +22,7 @@ public class WaterSimulation : MonoBehaviour
         }
 
         mesh = meshFilter.mesh;
+        mesh.MarkDynamic();
         if (mesh == null)
         {
             Debug.LogError("No se encontró la malla en el MeshFilter.");
@@ -60,15 +61,14 @@ public class WaterSimulation : MonoBehaviour
         for (int i = 0; i < modifiedVertices.Length; i++)
         {
             modifiedVertices[i] = originalVertices[i]; // Restauramos los valores originales
-            modifiedVertices[i].y = Mathf.Max(originalVertices[i].y, waterLevel);
+            modifiedVertices[i].y = originalVertices[i].y + waterLevel; 
         }
     }
 
-    void SimulateWaves()
-    {
-        for (int i = 0; i < modifiedVertices.Length; i++)
-        {
-            modifiedVertices[i].y += Mathf.Sin(Time.time * waveSpeed + originalVertices[i].x) * waveHeight;
+    void SimulateWaves() {
+        for (int i = 0; i < modifiedVertices.Length; i++) {
+            Vector3 worldPos = transform.TransformPoint(originalVertices[i]);
+            modifiedVertices[i].y += Mathf.Sin(Time.time * waveSpeed + worldPos.x + worldPos.z) * waveHeight;
         }
     }
 
