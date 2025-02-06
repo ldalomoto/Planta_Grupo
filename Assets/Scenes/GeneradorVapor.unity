@@ -10595,30 +10595,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16a1ea438c4063643aa101236495152b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waterLevel: 100
-  waterInputRate: 5
-  heatTransferRate: 10
-  temperature: 0
-  maxTemperature: 100
-  steamProductionRate: 10
-  maxSteamPressure: 100
-  currentSteamPressure: 0
-  isActive: 0
-  feedwaterInlet: {fileID: 0}
-  heatExchangeTube: {fileID: 0}
-  steamOutlet: {fileID: 0}
-  collector: {fileID: 0}
-  steamParticles: {fileID: 0}
-  bubbleParticles: {fileID: 0}
-  bubbleTemperatureThreshold: 50
-  maxBubbleEmissionRate: 20
-  waterLevelText: {fileID: 0}
-  temperatureText: {fileID: 0}
-  steamPressureText: {fileID: 0}
-  waterVisual: {fileID: 0}
-  flowArrow1: {fileID: 0}
-  flowArrow2: {fileID: 0}
-  steamCloud: {fileID: 0}
 --- !u!1 &1702769372
 GameObject:
   m_ObjectHideFlags: 0
@@ -15806,30 +15782,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16a1ea438c4063643aa101236495152b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waterLevel: 100
-  waterInputRate: 5
-  heatTransferRate: 10
-  temperature: 0
-  maxTemperature: 100
-  steamProductionRate: 10
-  maxSteamPressure: 100
-  currentSteamPressure: 0
-  isActive: 0
-  feedwaterInlet: {fileID: 7032581638970709468}
-  heatExchangeTube: {fileID: 574186895}
-  steamOutlet: {fileID: 896008932399320300}
-  collector: {fileID: 951655050545309985}
-  steamParticles: {fileID: 1702769374}
-  bubbleParticles: {fileID: 887322002}
-  bubbleTemperatureThreshold: 50
-  maxBubbleEmissionRate: 20
-  waterLevelText: {fileID: 49929125}
-  temperatureText: {fileID: 144302889}
-  steamPressureText: {fileID: 491976619}
-  waterVisual: {fileID: 2124482776}
-  flowArrow1: {fileID: 1279759142}
-  flowArrow2: {fileID: 1782035109}
-  steamCloud: {fileID: 0}
 --- !u!1 &1872457529
 GameObject:
   m_ObjectHideFlags: 0
@@ -15841,6 +15793,10 @@ GameObject:
   - component: {fileID: 1872457530}
   - component: {fileID: 1872457532}
   - component: {fileID: 1872457531}
+  - component: {fileID: 1872457535}
+  - component: {fileID: 1872457534}
+  - component: {fileID: 1872457533}
+  - component: {fileID: 1872457536}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -15908,6 +15864,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1872457529}
   m_CullTransparentMesh: 1
+--- !u!114 &1872457533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1872457529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25a9d07509e33e94e92fda86c84b67ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1872457534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1872457529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25a9d07509e33e94e92fda86c84b67ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1872457535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1872457529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25a9d07509e33e94e92fda86c84b67ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1872457536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1872457529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25a9d07509e33e94e92fda86c84b67ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2124482776
 GameObject:
   m_ObjectHideFlags: 0
