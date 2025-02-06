@@ -3,8 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\LENOVO\\Documents\\PROYECTO NUCLEAR\\UNITY\\Planta_Grupo\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C97A9FE9-23D3-9646-B265-3BAF09EEED1B}|Assembly-CSharp.csproj|c:\\users\\lenovo\\documents\\proyecto nuclear\\unity\\planta_grupo\\assets\\scripts\\steamgenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C97A9FE9-23D3-9646-B265-3BAF09EEED1B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\steamgenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C97A9FE9-23D3-9646-B265-3BAF09EEED1B}|Assembly-CSharp.csproj|c:\\users\\lenovo\\documents\\proyecto nuclear\\unity\\planta_grupo\\assets\\scripts\\steam generator\\calculos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C97A9FE9-23D3-9646-B265-3BAF09EEED1B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\steam generator\\calculos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C97A9FE9-23D3-9646-B265-3BAF09EEED1B}|Assembly-CSharp.csproj|c:\\users\\lenovo\\documents\\proyecto nuclear\\unity\\planta_grupo\\assets\\scripts\\steam generator\\steamgenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C97A9FE9-23D3-9646-B265-3BAF09EEED1B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\steam generator\\steamgenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,23 +18,32 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "SteamGenerator.cs",
-              "DocumentMoniker": "C:\\Users\\LENOVO\\Documents\\PROYECTO NUCLEAR\\UNITY\\Planta_Grupo\\Assets\\Scripts\\SteamGenerator.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\SteamGenerator.cs",
-              "ToolTip": "C:\\Users\\LENOVO\\Documents\\PROYECTO NUCLEAR\\UNITY\\Planta_Grupo\\Assets\\Scripts\\SteamGenerator.cs",
-              "RelativeToolTip": "Assets\\Scripts\\SteamGenerator.cs",
-              "ViewState": "AgIAABQAAAAAAAAAAAAAwB0AAAAiAAAAAAAAAA==",
+              "Title": "Calculos.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\Documents\\PROYECTO NUCLEAR\\UNITY\\Planta_Grupo\\Assets\\Scripts\\Steam Generator\\Calculos.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Steam Generator\\Calculos.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\Documents\\PROYECTO NUCLEAR\\UNITY\\Planta_Grupo\\Assets\\Scripts\\Steam Generator\\Calculos.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Steam Generator\\Calculos.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-01T22:48:02.079Z",
+              "WhenOpened": "2025-02-06T01:27:36.202Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SteamGenerator.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\Documents\\PROYECTO NUCLEAR\\UNITY\\Planta_Grupo\\Assets\\Scripts\\Steam Generator\\SteamGenerator.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Steam Generator\\SteamGenerator.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\Documents\\PROYECTO NUCLEAR\\UNITY\\Planta_Grupo\\Assets\\Scripts\\Steam Generator\\SteamGenerator.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Steam Generator\\SteamGenerator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-06T01:26:39.903Z",
               "EditorCaption": ""
             }
           ]

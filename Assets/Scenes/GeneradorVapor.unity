@@ -15814,7 +15814,7 @@ MonoBehaviour:
   steamProductionRate: 10
   maxSteamPressure: 100
   currentSteamPressure: 0
-  isActive: 1
+  isActive: 0
   feedwaterInlet: {fileID: 7032581638970709468}
   heatExchangeTube: {fileID: 574186895}
   steamOutlet: {fileID: 896008932399320300}
@@ -15867,7 +15867,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.6000061, y: 0}
+  m_AnchoredPosition: {x: 0.5999756, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1872457531
@@ -16084,7 +16084,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 21, y: 205.12108, z: -163.82098}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 50, y: 50, z: 50}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 262448071977022874}
@@ -16168,6 +16168,7 @@ GameObject:
   m_Component:
   - component: {fileID: 543450653644360421}
   - component: {fileID: 1811992149}
+  - component: {fileID: 919132149118750816}
   m_Layer: 0
   m_Name: SteamGenerator
   m_TagString: Untagged
@@ -16175,6 +16176,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &919132149118750816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132149118750815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25a9d07509e33e94e92fda86c84b67ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &951655050545309985
 GameObject:
   m_ObjectHideFlags: 0
