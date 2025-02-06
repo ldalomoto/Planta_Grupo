@@ -1,75 +1,80 @@
-using UnityEngine;
+using System.Collections;
 using System.Collections.Generic;
+using UnityEngine;
+using System.Threading.Tasks;
+using UnityEngine.UI;
 
 public class FuelRodManager : MonoBehaviour
 {
-    [System.Serializable]
-    public class FuelRod
-    {
-        public Transform rodTransform;
-        public float enrichmentLevel = 0.05f; // Ejemplo: 3% de U-235
-        [HideInInspector] public float neutronProduction;
-    }
-
-    public List<FuelRod> fuelRods = new List<FuelRod>();
-    public ControlRodManager controlRodManager;  // Referencia al sistema de barras de control
-
-    private const float AvogadroNumber = 6.022e23f;  
-    private const float UraniumDensity = 19.1f;
-    private const float U235AtomicMass = 235.0f;
-    private const float FissionCrossSection = 585e-24f; 
-    private const float BaseNeutronFlux = 1e12f;
+    public FuelRod[,] fuelRods;
+    public int gridSize = 10; // Tamaño de la malla 10x10
+    public float reactorPower; // Potencia total del reactor en MW
+    public float coolantTemperature;
+    public Text neutronFluxText;
+    public Text temperatureText;
+    public GameObject heatmapQuad;
+    private Texture2D heatmapTexture;
+    private Color[] heatmapColors;
 
     void Start()
     {
-        if (fuelRods == null || fuelRods.Count == 0)
+        // Inicializar la matriz de varillas de combustible
+        fuelRods = new FuelRod[gridSize, gridSize];
+        for (int x = 0; x < gridSize; x++)
         {
-            Debug.LogError("❌ No hay barras de combustible asignadas en FuelRodManager.");
-            return;
-        }
-
-        if (controlRodManager == null)
-        {
-            Debug.LogError("❌ No se encontró ControlRodManager. Asigna este script en el Inspector.");
-            return;
-        }
-
-        InitializeFuelRods();
-    }
-
-    void InitializeFuelRods()
-    {
-        foreach (FuelRod rod in fuelRods)
-        {
-            if (rod == null || rod.rodTransform == null)
+            for (int y = 0; y < gridSize; y++)
             {
-                Debug.LogError("❌ Una de las barras de combustible no tiene asignado un Transform.");
-                continue;
+                fuelRods[x, y] = new FuelRod(x, y);
             }
-
-            rod.neutronProduction = CalculateNeutronProduction(rod.enrichmentLevel);
         }
+
+        // Configurar el mapa de calor
+        heatmapTexture = new Texture2D(gridSize, gridSize);
+        heatmapColors = new Color[gridSize * gridSize];
+        heatmapQuad.GetComponent<Renderer>().material.mainTexture = heatmapTexture;
     }
 
-    float CalculateNeutronProduction(float enrichment)
+    void Update()
     {
-        float fuelDensity = (UraniumDensity / U235AtomicMass) * AvogadroNumber;  
-        float effectiveU235Density = fuelDensity * enrichment;  
-
-        return effectiveU235Density * FissionCrossSection * BaseNeutronFlux;
-    }
-
-    public float GetNeutronProduction()
-    {
-        float totalNeutrons = 0f;
-        foreach (FuelRod rod in fuelRods)
+        float deltaTime = Time.deltaTime; 
+        Parallel.For(0, gridSize, x =>
         {
-            totalNeutrons += rod.neutronProduction;
+            for (int y = 0; y < gridSize; y++)
+            {
+                fuelRods[x, y].UpdateNeutronFlux(fuelRods, gridSize);
+                fuelRods[x, y].CalculateTemperature(coolantTemperature, deltaTime);
+            }
+        });
+
+        UpdateUI();
+        UpdateHeatmap();
+    }
+
+    void UpdateUI()
+    {
+        if (fuelRods.Length > 0)
+        {
+            float flux = fuelRods[0, 0].neutronFlux;
+            float temp = fuelRods[0, 0].temperature;
+
+            Debug.Log("Actualizando UI - Flujo: " + flux + ", Temp: " + temp);
+
+            neutronFluxText.text = "Flujo neutrónico: " + flux.ToString("E2");
+            temperatureText.text = "Temperatura: " + temp.ToString("F2") + " K";
         }
+    }
 
-        float absorbedNeutrons = controlRodManager.GetTotalNeutronAbsorption(totalNeutrons);
-        float netNeutrons = Mathf.Max(0, totalNeutrons - absorbedNeutrons); // Evitar valores negativos
-
-        return netNeutrons;
+    void UpdateHeatmap()
+    {
+        for (int x = 0; x < gridSize; x++)
+        {
+            for (int y = 0; y < gridSize; y++)
+            {
+                float normalizedFlux = Mathf.InverseLerp(1e14f, 1e16f, fuelRods[x, y].neutronFlux);
+                heatmapColors[y * gridSize + x] = Color.Lerp(Color.blue, Color.red, normalizedFlux);
+            }
+        }
+        heatmapTexture.SetPixels(heatmapColors);
+        heatmapTexture.Apply();
     }
 }
