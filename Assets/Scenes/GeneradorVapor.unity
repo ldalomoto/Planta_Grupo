@@ -10595,6 +10595,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16a1ea438c4063643aa101236495152b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  waterLevel: 50
+  waterInputRate: 5
+  heatTransferRate: 10
+  temperature: 25
+  maxTemperature: 100
+  steamProductionRate: 10
+  maxSteamPressure: 100
+  currentSteamPressure: 0
+  isActive: 0
+  feedwaterInlet: {fileID: 0}
+  heatExchangeTube: {fileID: 0}
+  steamOutlet: {fileID: 0}
+  collector: {fileID: 0}
+  steamParticles: {fileID: 0}
+  bubbleParticles: {fileID: 0}
+  bubbleTemperatureThreshold: 50
+  maxBubbleEmissionRate: 20
+  waterLevelText: {fileID: 0}
+  temperatureText: {fileID: 0}
+  steamPressureText: {fileID: 0}
+  waterVisual: {fileID: 0}
+  flowArrow1: {fileID: 0}
+  flowArrow2: {fileID: 0}
+  steamCloud: {fileID: 0}
 --- !u!1 &1702769372
 GameObject:
   m_ObjectHideFlags: 0
@@ -15782,6 +15806,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16a1ea438c4063643aa101236495152b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  waterLevel: 50
+  waterInputRate: 5
+  heatTransferRate: 10
+  temperature: 25
+  maxTemperature: 100
+  steamProductionRate: 10
+  maxSteamPressure: 100
+  currentSteamPressure: 0.26
+  isActive: 0
+  feedwaterInlet: {fileID: 7032581638970709468}
+  heatExchangeTube: {fileID: 574186895}
+  steamOutlet: {fileID: 896008932399320300}
+  collector: {fileID: 951655050545309985}
+  steamParticles: {fileID: 1702769374}
+  bubbleParticles: {fileID: 887322002}
+  bubbleTemperatureThreshold: 50
+  maxBubbleEmissionRate: 20
+  waterLevelText: {fileID: 49929125}
+  temperatureText: {fileID: 144302889}
+  steamPressureText: {fileID: 491976619}
+  waterVisual: {fileID: 2124482776}
+  flowArrow1: {fileID: 1279759142}
+  flowArrow2: {fileID: 1782035109}
+  steamCloud: {fileID: 656376943}
 --- !u!1 &1872457529
 GameObject:
   m_ObjectHideFlags: 0
@@ -16088,7 +16136,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 21, y: 205.12108, z: -163.82098}
-  m_LocalScale: {x: 50, y: 50, z: 50}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 262448071977022874}
