@@ -65,12 +65,16 @@
     <Compile Include="Assets\Scripts\Reactor\FuelRodManager.cs" />
     <Compile Include="Assets\Scripts\Steam Generator\SteamGenerator.cs" />
     <Compile Include="Assets\Scripts\Reactor\ReactorCore.cs" />
+    <Compile Include="Assets\Scripts\Turbina y Generador\HeliceGenerador.cs" />
+    <Compile Include="Assets\Scripts\Turbina y Generador\TubeRotation.cs" />
     <Compile Include="Assets\Scripts\Reactor\WaterSimulation.cs" />
     <Compile Include="Assets\Scripts\Reactor\control.cs" />
     <Compile Include="Assets\Scripts\Steam Generator\Calculos.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
+    <Compile Include="Assets\Scripts\Turbina y Generador\HelixRotation.cs" />
     <Compile Include="Assets\Scripts\Reactor\NeutronSimulation.cs" />
     <Compile Include="Assets\Scripts\ReactorSimulator.cs" />
+    <Compile Include="Assets\Scripts\Turbina y Generador\TuboGenerador.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

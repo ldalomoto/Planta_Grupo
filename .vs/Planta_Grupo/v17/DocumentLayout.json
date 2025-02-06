@@ -3,12 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\LENOVO\\Documents\\PROYECTO NUCLEAR\\UNITY\\Planta_Grupo\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C97A9FE9-23D3-9646-B265-3BAF09EEED1B}|Assembly-CSharp.csproj|c:\\users\\lenovo\\documents\\proyecto nuclear\\unity\\planta_grupo\\assets\\scripts\\steam generator\\calculos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C97A9FE9-23D3-9646-B265-3BAF09EEED1B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\steam generator\\calculos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C97A9FE9-23D3-9646-B265-3BAF09EEED1B}|Assembly-CSharp.csproj|c:\\users\\lenovo\\documents\\proyecto nuclear\\unity\\planta_grupo\\assets\\scripts\\turbina y generador\\tubogenerador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C97A9FE9-23D3-9646-B265-3BAF09EEED1B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\turbina y generador\\tubogenerador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C97A9FE9-23D3-9646-B265-3BAF09EEED1B}|Assembly-CSharp.csproj|c:\\users\\lenovo\\documents\\proyecto nuclear\\unity\\planta_grupo\\assets\\scripts\\steam generator\\steamgenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C97A9FE9-23D3-9646-B265-3BAF09EEED1B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\steam generator\\steamgenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C97A9FE9-23D3-9646-B265-3BAF09EEED1B}|Assembly-CSharp.csproj|C:\\Users\\LENOVO\\Documents\\PROYECTO NUCLEAR\\UNITY\\Planta_Grupo\\assets\\scripts\\turbina y generador\\tuberotation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C97A9FE9-23D3-9646-B265-3BAF09EEED1B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\turbina y generador\\tuberotation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C97A9FE9-23D3-9646-B265-3BAF09EEED1B}|Assembly-CSharp.csproj|c:\\users\\lenovo\\documents\\proyecto nuclear\\unity\\planta_grupo\\assets\\scripts\\turbina y generador\\helicegenerador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C97A9FE9-23D3-9646-B265-3BAF09EEED1B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\turbina y generador\\helicegenerador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C97A9FE9-23D3-9646-B265-3BAF09EEED1B}|Assembly-CSharp.csproj|C:\\Users\\LENOVO\\Documents\\PROYECTO NUCLEAR\\UNITY\\Planta_Grupo\\assets\\scripts\\turbina y generador\\helixrotation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C97A9FE9-23D3-9646-B265-3BAF09EEED1B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\turbina y generador\\helixrotation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,27 +31,52 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Calculos.cs",
-              "DocumentMoniker": "C:\\Users\\LENOVO\\Documents\\PROYECTO NUCLEAR\\UNITY\\Planta_Grupo\\Assets\\Scripts\\Steam Generator\\Calculos.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Steam Generator\\Calculos.cs",
-              "ToolTip": "C:\\Users\\LENOVO\\Documents\\PROYECTO NUCLEAR\\UNITY\\Planta_Grupo\\Assets\\Scripts\\Steam Generator\\Calculos.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Steam Generator\\Calculos.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAABAAAAAAAAAA==",
+              "Title": "TuboGenerador.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\Documents\\PROYECTO NUCLEAR\\UNITY\\Planta_Grupo\\Assets\\Scripts\\Turbina y Generador\\TuboGenerador.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Turbina y Generador\\TuboGenerador.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\Documents\\PROYECTO NUCLEAR\\UNITY\\Planta_Grupo\\Assets\\Scripts\\Turbina y Generador\\TuboGenerador.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Turbina y Generador\\TuboGenerador.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-06T01:27:36.202Z",
+              "WhenOpened": "2025-02-06T04:10:02.904Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "SteamGenerator.cs",
-              "DocumentMoniker": "C:\\Users\\LENOVO\\Documents\\PROYECTO NUCLEAR\\UNITY\\Planta_Grupo\\Assets\\Scripts\\Steam Generator\\SteamGenerator.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Steam Generator\\SteamGenerator.cs",
-              "ToolTip": "C:\\Users\\LENOVO\\Documents\\PROYECTO NUCLEAR\\UNITY\\Planta_Grupo\\Assets\\Scripts\\Steam Generator\\SteamGenerator.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Steam Generator\\SteamGenerator.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAnAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "HeliceGenerador.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\Documents\\PROYECTO NUCLEAR\\UNITY\\Planta_Grupo\\Assets\\Scripts\\Turbina y Generador\\HeliceGenerador.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Turbina y Generador\\HeliceGenerador.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\Documents\\PROYECTO NUCLEAR\\UNITY\\Planta_Grupo\\Assets\\Scripts\\Turbina y Generador\\HeliceGenerador.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Turbina y Generador\\HeliceGenerador.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-06T01:26:39.903Z",
+              "WhenOpened": "2025-02-06T04:06:32.292Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "HelixRotation.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\Documents\\PROYECTO NUCLEAR\\UNITY\\Planta_Grupo\\Assets\\Scripts\\Turbina y Generador\\HelixRotation.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Turbina y Generador\\HelixRotation.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\Documents\\PROYECTO NUCLEAR\\UNITY\\Planta_Grupo\\Assets\\Scripts\\Turbina y Generador\\HelixRotation.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Turbina y Generador\\HelixRotation.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-06T02:50:32.512Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TubeRotation.cs",
+              "DocumentMoniker": "C:\\Users\\LENOVO\\Documents\\PROYECTO NUCLEAR\\UNITY\\Planta_Grupo\\Assets\\Scripts\\Turbina y Generador\\TubeRotation.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Turbina y Generador\\TubeRotation.cs",
+              "ToolTip": "C:\\Users\\LENOVO\\Documents\\PROYECTO NUCLEAR\\UNITY\\Planta_Grupo\\Assets\\Scripts\\Turbina y Generador\\TubeRotation.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Turbina y Generador\\TubeRotation.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-06T02:14:42.195Z",
               "EditorCaption": ""
             }
           ]
