@@ -185,12 +185,20 @@ public class SteamGenerator : MonoBehaviour
 
             // Cambiar el color según la temperatura (azul a rojo)
             
-            if (waterRenderer != null)
-            {
-                float t = temperature / maxTemperature;
-                Color waterColor = Color.Lerp(Color.blue, Color.red, t);
-                waterRenderer.material.color = waterColor;
-            }
+        if (waterRenderer != null)
+        //No cambiar colores
+        {
+            float t = temperature / maxTemperature;
+            
+            // Color lightBlue con el valor hexadecimal 128DFF y alpha ajustado para transparencia
+            Color lightBlue = new Color(0.102f, 0.416f, 1.000f, 0.685f); // Azul claro 128DFF con alpha 0.5 (50% transparente)
+            Color lightRed = new Color(1f, 0.4f, 0.4f, 0.7f);        // Rojo claro con alpha 0.5
+            Color waterColor = Color.Lerp(lightBlue, lightRed, t);
+            
+            // Aplicar color con transparencia
+            waterRenderer.material.color = waterColor;
+        }
+
             
         }
     }
