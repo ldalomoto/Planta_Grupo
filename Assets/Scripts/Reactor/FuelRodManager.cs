@@ -15,6 +15,7 @@ public class FuelRodManager : MonoBehaviour
     public TMP_Text productionText;
     public TMP_Text lostText;
     public TMP_Text cambioText;
+    public TMP_Text kEffText;
 
     private NativeArray<float> neutronProductions;
     private NativeArray<float> neutronLosses;
@@ -190,14 +191,42 @@ public class FuelRodManager : MonoBehaviour
         if (fuelRods == null || fuelRods.Count == 0) return;
         if (fuelRods.Count > 0)
         {
-            FuelRod centralRod = fuelRods[fuelRods.Count-1];
+            FuelRod centralRod = fuelRods[fuelRods.Count / 2];
+
+            float totalProduction = 0f;
+            float totalLoss = 0f;
+
+            foreach (FuelRod rod in fuelRods)
+            {
+                totalProduction += rod.neutronProduction;
+                totalLoss += rod.neutronLoss;
+            }
+
+            float kEff = (totalLoss > 0) ? totalProduction / totalLoss : 0f;
+
             neutronFluxText.text = $"Neutron Flux: {centralRod.currentFlux:0.##E0} n/cm²s";
             temperatureText.text = $"Temperature: {centralRod.temperature:F2} K";
             productionText.text = $"Producción: {centralRod.neutronProduction:F2}";
             lostText.text = $"Pérdida: {centralRod.neutronLoss:F2}";
             cambioText.text = $"Cambio: {centralRod.neutronProduction - centralRod.neutronLoss:F2}";
+            kEffText.text = $"k_eff: {kEff:F5}";
 
-            Debug.Log($"UI Actualizando - Producción: {centralRod.neutronProduction}, Pérdidas: {centralRod.neutronLoss}, Cambio: {centralRod.neutronProduction - centralRod.neutronLoss}");
+            
+            if (Mathf.Abs(kEff - 1.0f) < 0.01f)
+            {
+                Debug.Log("🔥 Reactor en estado CRÍTICO.");
+            }
+            else if (kEff > 1.0f)
+            {
+                Debug.Log("⚠️ Reactor en estado SUPERCRÍTICO (potencia en aumento).");
+            }
+            else
+            {
+                Debug.Log("🔵 Reactor en estado SUBCRÍTICO (potencia decayendo).");
+            }
+            
+
+            //Debug.Log($"Producción Total: {totalProduction}, Pérdida Total: {totalLoss}, k_eff: {kEff}");
         }
     }
 
@@ -256,6 +285,10 @@ public class FuelRodManager : MonoBehaviour
             float absorptionProb = 0.12f * positionFactor;
             float leakageProb = 0.03f * (1 - positionFactor);
 
+            // Efecto Doppler: Ajuste de la absorción con la temperatura
+            float tempFactor = Mathf.Clamp01((temperatures[index] - coolantTemp) / 1000f);
+            absorptionProb *= (1 + 0.4f * tempFactor); // Aumento de la absorción con la temperatura
+
             // 3. Balance neutrónico mejorado
             float currentFlux = neutronFluxes[index];
             
@@ -270,7 +303,7 @@ public class FuelRodManager : MonoBehaviour
 
             // 4. Actualizar flujo con límites físicos
             float newFlux = currentFlux + (neutronProduction - neutronLoss) * deltaTime - decayTerm;
-            newFlux = Mathf.Clamp(newFlux, 1e12f, maxFlux); //  5e11f
+            newFlux = Mathf.Clamp(newFlux, 1e12f, maxFlux);
 
             // 5. Cálculo de temperatura realista
             float powerDensity = newFlux * fissionProb * 200e6f * 1.602e-19f; // W/cm³
@@ -283,10 +316,6 @@ public class FuelRodManager : MonoBehaviour
 
             neutronProductions[index] = neutronProduction;
             neutronLosses[index] = neutronLoss;
-
-            //Debug.Log($"Producción: {neutronProduction}, Pérdidas: {neutronLoss}, Cambio: {neutronProduction - neutronLoss}");
-
-
         }
     }
 }
