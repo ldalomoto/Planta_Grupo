@@ -1,54 +1,72 @@
 using UnityEngine;
 
-public class FuelRod
+public class FuelRod : MonoBehaviour
 {
-    public int X;
-    public int Y;
-    public float enrichment = 0.05f; // 5% U-235
-    public float density = 10.97f; // g/cm³ (UO2)
-    public float temperature = 300.0f; // Kelvin
-    public float burnup = 0.0f; // MWd/kgU
-    public float neutronFlux = 1e14f; // n/cm²s inicial
+    [Header("Nuclear Parameters")]
+    public float enrichment = 0.05f;
+    public float density = 10.97f;
+    
+    [Header("Current Status")]
+    public float currentFlux;
+    public float temperature;
+
+    // Parámetros privados
+    private float u235Atoms;
+    private float coolantTemperature;
+    private float heatTransferCoefficient;
+    private Renderer rodRenderer;
+
     public float neutronProduction;
-    public float neutronAbsorption;
-    private const float sigmaFission = 0.0585f; // Sección eficaz de fisión (barns)
-    private const float sigmaAbsorption = 0.07f; // Sección eficaz de absorción (barns)
-    private const float neutronsPerFission = 2.6f; // Neutrones por fisión
-    private const float diffusionCoefficient = 0.003f; // Factor de difusión de neutrones
-    private float U235Density;
+    public float neutronLoss;
 
-    public FuelRod(int x, int y)
+    public void SetNeutronData(float production, float loss)
     {
-        this.X = x;
-        this.Y = y;
-        U235Density = density * enrichment; // Calcular la densidad de U-235
+        neutronProduction = production;
+        neutronLoss = loss;
     }
 
-    public void UpdateNeutronFlux(FuelRod[,] fuelRods, int gridSize)
+    public void InitializeNuclearParameters(float enrichment, float density, float coolantTemp, float heatTransfer)
     {
-        float fissionRate = neutronFlux * sigmaFission * U235Density;
-        float absorptionRate = neutronFlux * sigmaAbsorption;
-        float diffusionEffect = 0.0f;
-
-        // Difusión de neutrones entre celdas vecinas
-        if (X > 0) diffusionEffect += diffusionCoefficient * (fuelRods[X - 1, Y].neutronFlux - neutronFlux);
-        if (X < gridSize - 1) diffusionEffect += diffusionCoefficient * (fuelRods[X + 1, Y].neutronFlux - neutronFlux);
-        if (Y > 0) diffusionEffect += diffusionCoefficient * (fuelRods[X, Y - 1].neutronFlux - neutronFlux);
-        if (Y < gridSize - 1) diffusionEffect += diffusionCoefficient * (fuelRods[X, Y + 1].neutronFlux - neutronFlux);
-
-        neutronProduction = fissionRate * neutronsPerFission;
-        neutronAbsorption = absorptionRate;
-        neutronFlux += neutronProduction - neutronAbsorption + diffusionEffect;
+        this.enrichment = enrichment;
+        this.density = density;
+        this.coolantTemperature = coolantTemp;
+        this.heatTransferCoefficient = heatTransfer;
+        
+        rodRenderer = GetComponent<Renderer>();
+        CalculateU235Density();
     }
 
-    public void CalculateTemperature(float coolantTemp, float deltaTime)
+    void CalculateU235Density()
     {
-        float powerDensity = neutronFlux * sigmaFission * 200e6f; // 200 MeV por fisión
-        temperature += (powerDensity - (temperature - coolantTemp)) * deltaTime;
+        float molarMassUO2 = (235f * enrichment) + (238f * (1 - enrichment)) + (2 * 16f);
+        u235Atoms = (density * enrichment * 6.022e23f) / molarMassUO2;
+    }
+
+    public void SetFluxAndTemp(float flux, float temp)
+    {
+        currentFlux = flux;
+        temperature = temp;
+    }
+
+    public void SetFlux(float flux)
+    {
+        currentFlux = flux;
+    }
+
+    public void UpdateVisual()
+    {
+        // Mapear temperatura a color (300K-1500K)
+        float tempRatio = Mathf.InverseLerp(300f, 1500f, temperature);
+        Color rodColor = Color.Lerp(
+            new Color(0, 0.3f, 1f),    // Azul frío
+            new Color(1f, 0.2f, 0f),   // Rojo caliente
+            tempRatio
+        );
+        
+        rodRenderer.material.color = rodColor;
+        rodRenderer.material.SetColor("_EmissionColor", rodColor * 0.3f);
     }
 }
-
-
 /*
 using UnityEngine;
 
