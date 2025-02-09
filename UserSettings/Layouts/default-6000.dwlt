@@ -20,9 +20,12 @@ MonoBehaviour:
     height: 772.8
   m_ShowMode: 4
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_Title: Hierarchy
   m_RootView: {fileID: 5}
 =======
+=======
+>>>>>>> parent of fa5535a (Ningun cambio)
   m_Title: Scene
   m_RootView: {fileID: 2}
 >>>>>>> parent of fa5535a (Ningun cambio)
@@ -157,9 +160,12 @@ MonoBehaviour:
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_LastLoadedLayoutName: 
 --- !u!114 &7
 =======
+=======
+>>>>>>> parent of fa5535a (Ningun cambio)
   m_LastLoadedLayoutName: 2 by 3
 --- !u!114 &4
 >>>>>>> parent of fa5535a (Ningun cambio)
@@ -188,7 +194,11 @@ MonoBehaviour:
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
   controlID: 49
+=======
+  controlID: 47801
+>>>>>>> parent of fa5535a (Ningun cambio)
 =======
   controlID: 47801
 >>>>>>> parent of fa5535a (Ningun cambio)
@@ -239,9 +249,12 @@ MonoBehaviour:
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
 <<<<<<< HEAD
+<<<<<<< HEAD
   controlID: 26
   draggingID: 0
 =======
+=======
+>>>>>>> parent of fa5535a (Ningun cambio)
   controlID: 47770
   draggingID: 0
 --- !u!114 &7
@@ -457,6 +470,9 @@ MonoBehaviour:
       m_SelectedIDs: 
       m_LastClickedID: 0
       m_ExpandedIDs: 407cfeff447cfeff1afbffffbab100003cb20000
+<<<<<<< HEAD
+>>>>>>> parent of fa5535a (Ningun cambio)
+=======
 >>>>>>> parent of fa5535a (Ningun cambio)
       m_RenameOverlay:
         m_UserAcceptedRename: 0
@@ -475,7 +491,11 @@ MonoBehaviour:
         m_IsRenamingFilename: 0
         m_TrimLeadingAndTrailingWhitespace: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
         m_ClientGUIView: {fileID: 10}
+=======
+        m_ClientGUIView: {fileID: 0}
+>>>>>>> parent of fa5535a (Ningun cambio)
 =======
         m_ClientGUIView: {fileID: 0}
 >>>>>>> parent of fa5535a (Ningun cambio)
@@ -583,7 +603,11 @@ MonoBehaviour:
     m_SearchArea: 1
     m_Folders:
 <<<<<<< HEAD
+<<<<<<< HEAD
     - Assets/Scripts/Turbina y Generador
+=======
+    - Assets
+>>>>>>> parent of fa5535a (Ningun cambio)
 =======
     - Assets
 >>>>>>> parent of fa5535a (Ningun cambio)
@@ -605,7 +629,11 @@ MonoBehaviour:
     m_SelectedIDs: b0230000
     m_LastClickedID: 9136
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_ExpandedIDs: 000000004eb3000050b30000
+=======
+    m_ExpandedIDs: ffffffff000000006e020000e6b20000e8b2000076b40000b0b400000eb500003cd000003ed0000042d000003eda000000ca9a3bffffff7f
+>>>>>>> parent of fa5535a (Ningun cambio)
 =======
     m_ExpandedIDs: ffffffff000000006e020000e6b20000e8b2000076b40000b0b400000eb500003cd000003ed0000042d000003eda000000ca9a3bffffff7f
 >>>>>>> parent of fa5535a (Ningun cambio)
@@ -635,10 +663,17 @@ MonoBehaviour:
       m_ResourceFile: 
   m_AssetTreeState:
 <<<<<<< HEAD
+<<<<<<< HEAD
     scrollPos: {x: 0, y: 240}
     m_SelectedIDs: 
     m_LastClickedID: 0
     m_ExpandedIDs: ffffffff000000004eb3000050b3000042b5000044b5000066b60000
+=======
+    scrollPos: {x: 0, y: 60}
+    m_SelectedIDs: 
+    m_LastClickedID: 0
+    m_ExpandedIDs: ffffffff000000006e020000e6b20000e8b2000076b40000b0b400000eb500003cd000003ed0000042d000003eda000000ca9a3bffffff7f
+>>>>>>> parent of fa5535a (Ningun cambio)
 =======
     scrollPos: {x: 0, y: 60}
     m_SelectedIDs: 
@@ -662,7 +697,11 @@ MonoBehaviour:
       m_IsRenamingFilename: 1
       m_TrimLeadingAndTrailingWhitespace: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
       m_ClientGUIView: {fileID: 2}
+=======
+      m_ClientGUIView: {fileID: 0}
+>>>>>>> parent of fa5535a (Ningun cambio)
 =======
       m_ClientGUIView: {fileID: 0}
 >>>>>>> parent of fa5535a (Ningun cambio)
@@ -1359,9 +1398,15 @@ MonoBehaviour:
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_Target: {x: -3.3553107e+34, y: 4.383487e+33, z: 1.9809759e+34}
     speed: 2
     m_Value: {x: -3.3553107e+34, y: 4.383487e+33, z: 1.9809759e+34}
+=======
+    m_Target: {x: -72.0021, y: 22.562752, z: -382.2635}
+    speed: 2
+    m_Value: {x: -72.0021, y: 22.562752, z: -382.2635}
+>>>>>>> parent of fa5535a (Ningun cambio)
 =======
     m_Target: {x: -72.0021, y: 22.562752, z: -382.2635}
     speed: 2
@@ -1413,6 +1458,7 @@ MonoBehaviour:
     m_gridOpacity: 0.5
   m_Rotation:
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_Target: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
     speed: 2
     m_Value: {x: 0.7071066, y: -0.00000045867554, z: 0, w: 0.70710707}
@@ -1420,6 +1466,15 @@ MonoBehaviour:
     m_Target: 7.7812686e+30
     speed: 2
     m_Value: 8.147925e+30
+=======
+    m_Target: {x: -0.0029032384, y: 0.9883169, z: -0.15119937, w: -0.01897711}
+    speed: 2
+    m_Value: {x: -0.0029032384, y: 0.9883169, z: -0.15119937, w: -0.01897711}
+  m_Size:
+    m_Target: 12.06241
+    speed: 2
+    m_Value: 12.06241
+>>>>>>> parent of fa5535a (Ningun cambio)
 =======
     m_Target: {x: -0.0029032384, y: 0.9883169, z: -0.15119937, w: -0.01897711}
     speed: 2
