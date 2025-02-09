@@ -2,6 +2,10 @@ using UnityEngine;
 
 public class FuelRod : MonoBehaviour
 {
+
+    // Variables de Xenon-135
+    public float xenon135;
+
     [Header("Nuclear Parameters")]
     public float enrichment = 0.05f;
     public float density = 10.97f;
@@ -44,7 +48,7 @@ public class FuelRod : MonoBehaviour
 
     public void SetFluxAndTemp(float flux, float temp)
     {
-        currentFlux = flux;
+        currentFlux = flux; // Evitar valores cero
         temperature = temp;
     }
 
@@ -56,7 +60,7 @@ public class FuelRod : MonoBehaviour
     public void UpdateVisual()
     {
         // Mapear temperatura a color (300K-1500K)
-        float tempRatio = Mathf.InverseLerp(300f, 1500f, temperature);
+        float tempRatio = Mathf.Clamp01((temperature - 300f) / 1200f);
         Color rodColor = Color.Lerp(
             new Color(0, 0.3f, 1f),    // Azul frío
             new Color(1f, 0.2f, 0f),   // Rojo caliente
