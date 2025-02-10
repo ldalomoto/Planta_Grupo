@@ -6,6 +6,6 @@ public class TubeRotation : MonoBehaviour
 
     void Update()
     {
-        transform.Rotate(Vector3.forward * selfRotationSpeed * Time.deltaTime); // Prueba con Vector3.forward si no es el eje correcto
+        transform.Rotate(Vector3.forward * selfRotationSpeed * Time.deltaTime); 
     }
 }
