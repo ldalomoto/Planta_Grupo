@@ -70,6 +70,7 @@
     <Compile Include="Assets\Scripts\Turbina y Generador\TubeRotation.cs" />
     <Compile Include="Assets\Scripts\Canvas\canvasTexto.cs" />
     <Compile Include="Assets\Scripts\Reactor\WaterSimulation.cs" />
+    <Compile Include="Assets\Scripts\Refrigeration\FillCoolingEffect.cs" />
     <Compile Include="Assets\Scripts\Reactor\control.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\Scripts\Reactor\CoolantSystem.cs" />
