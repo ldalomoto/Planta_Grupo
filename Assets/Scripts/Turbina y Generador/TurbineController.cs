@@ -3,25 +3,25 @@ using UnityEngine;
 public class TurbineController : MonoBehaviour
 {
     public ParticleSystem centralSteam; // Vapor central
-    public ParticleSystem[] sideSteams; // Otros tres sistemas de partículas
-    public HelixRotation helix1; // Script de rotación de hélices turbina 1
-    public HelixRotation helix2; // Script de rotación de hélices turbina 2
-    public HeliceGenerador helice; //Script de rotación de hélices generador eléctrico
-    public TubeRotation tube; // Script de rotación del tubo turbina
-    public TuboGenerador tubo; // Script de rotación del tubo generador eléctrico
+    public ParticleSystem[] sideSteams; // Otros tres sistemas de partï¿½culas
+    public HelixRotation helix1; // Script de rotaciï¿½n de hï¿½lices turbina 1
+    public HelixRotation helix2; // Script de rotaciï¿½n de hï¿½lices turbina 2
+    public HeliceGenerador helice; //Script de rotaciï¿½n de hï¿½lices generador elï¿½ctrico
+    public TubeRotation tube; // Script de rotaciï¿½n del tubo turbina
+    public TuboGenerador tubo; // Script de rotaciï¿½n del tubo generador elï¿½ctrico
 
     public float steamDelay = 1f; // Retraso antes de que salga el vapor central
-    public float rotationDelay = 2f; // Retraso antes de que las hélices y el tubo empiecen a girar
+    public float rotationDelay = 2f; // Retraso antes de que las hï¿½lices y el tubo empiecen a girar
     public float sideSteamDelay = 4f; // Retraso antes de que salgan los vapores laterales
     public float rotationDelayGen = 2f; // Retraso antes de que el generador gire
 
-    public bool isActivated = false; // Casilla de verificación para activar/desactivar la simulación
+    public bool isActivated = false; // Casilla de verificaciï¿½n para activar/desactivar la simulaciï¿½n
 
     void Update()
     {
-        if (isActivated)
+        if (isActivated || !isActivated)
         {
-            // Iniciar la simulación si está activada
+            // Iniciar la simulaciï¿½n si estï¿½ activada
             if (!centralSteam.isPlaying)
             {
                 StartSimulation();
@@ -29,7 +29,7 @@ public class TurbineController : MonoBehaviour
         }
         else
         {
-            // Detener la simulación si está desactivada
+            // Detener la simulaciï¿½n si estï¿½ desactivada
             if (centralSteam.isPlaying)
             {
                 StopSimulation();
@@ -39,7 +39,7 @@ public class TurbineController : MonoBehaviour
 
     void StartSimulation()
     {
-        // Iniciar la secuencia de simulación
+        // Iniciar la secuencia de simulaciï¿½n
         Invoke("ActivateCentralSteam", steamDelay);
         Invoke("StartRotation", rotationDelay);
         Invoke("ActivateSideSteams", sideSteamDelay);
@@ -55,7 +55,7 @@ public class TurbineController : MonoBehaviour
             if (steam) steam.Stop();
         }
 
-        // Detener la rotación de las hélices y tubo
+        // Detener la rotaciï¿½n de las hï¿½lices y tubo
         if (helix1) helix1.enabled = false;
         if (helix2) helix2.enabled = false;
         if (helice) helice.enabled = false;
@@ -75,9 +75,9 @@ public class TurbineController : MonoBehaviour
 
     void StartRotation()
     {
-        if (helix1) helix1.enabled = true; // Iniciar rotación de la turbina 1
-        if (helix2) helix2.enabled = true; // Iniciar rotación de la turbina 2
-        if (tube) tube.enabled = true;     // Iniciar rotación del tubo
+        if (helix1) helix1.enabled = true; // Iniciar rotaciï¿½n de la turbina 1
+        if (helix2) helix2.enabled = true; // Iniciar rotaciï¿½n de la turbina 2
+        if (tube) tube.enabled = true;     // Iniciar rotaciï¿½n del tubo
     }
 
     void ActivateSideSteams()
@@ -93,7 +93,7 @@ public class TurbineController : MonoBehaviour
 
     void StartRotationGen()
     {
-        if (helice) helice.enabled = true; // Iniciar rotación de la turbina generador electrico
-        if (tubo) tubo.enabled = true;     // Iniciar rotación del tubo generador electrico
+        if (helice) helice.enabled = true; // Iniciar rotaciï¿½n de la turbina generador electrico
+        if (tubo) tubo.enabled = true;     // Iniciar rotaciï¿½n del tubo generador electrico
     }
 }
