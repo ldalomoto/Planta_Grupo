@@ -4,6 +4,14 @@ using System.Collections.Generic;
 
 public class control : MonoBehaviour
 {
+
+    public static control Instance; 
+
+    void Awake()
+    {
+        Instance = this;
+    }
+
     [System.Serializable]
     public class ControlRod
     {
@@ -11,6 +19,8 @@ public class control : MonoBehaviour
         public bool isInserted = false;
         public float neutronAbsorptionEfficiency = 0.006f;
         public int rodID = 0;
+
+        public float insertionDepth; // 0-1
     }
 
     public float dropDistance = 45f;
@@ -38,12 +48,16 @@ public class control : MonoBehaviour
         }
     }
 
-    public float CalculateAbsorptionEfficiency(float rodLengthCM)
+    public float CalculateAbsorptionEfficiency(float insertionDepth)
     {
-        float sigma = cadmiumMicroXS * barnToCm2;
-        float N = (cadmiumDensity * avogadro) / molarMassCd;
-        float macroXS = sigma * N;
-        return 1f - Mathf.Exp(-macroXS * rodLengthCM);
+        //float sigma = cadmiumMicroXS * barnToCm2;
+        //float N = (cadmiumDensity * avogadro) / molarMassCd;
+        //float macroXS = sigma * N;
+        //return 1f - Mathf.Exp(-macroXS * rodLengthCM);
+
+        float boronDensity = 2.52f; // g/cm³ (B4C)
+        float macroXS = (boronDensity * 6.022e23f / 10.81f) * 3837e-24f; // Σa = ρ*N_A*σ
+        return 1f - Mathf.Exp(-macroXS * 400f * insertionDepth); // Longitud efectiva 4m
     }
 
     void Update()
@@ -54,7 +68,7 @@ public class control : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.V)) RaiseAllRods();
     }
 
-    void LowerOneRod()
+    public void LowerOneRod()
     {
         foreach (ControlRod rod in controlRods)
         {
@@ -69,7 +83,7 @@ public class control : MonoBehaviour
         }
     }
 
-    void RaiseOneRod()
+    public void RaiseOneRod()
     {
         if (loweredRods.Count > 0)
         {
@@ -79,7 +93,7 @@ public class control : MonoBehaviour
         }
     }
 
-    void LowerAllRods()
+    public void LowerAllRods()
     {
         foreach (ControlRod rod in controlRods)
         {
@@ -93,7 +107,7 @@ public class control : MonoBehaviour
         }
     }
 
-    void RaiseAllRods()
+    public void RaiseAllRods()
     {
         while (loweredRods.Count > 0)
         {
@@ -114,12 +128,21 @@ public class control : MonoBehaviour
 
     IEnumerator MoveRod(ControlRod rod, Vector3 targetPosition)
     {
+
+        Vector3 startPos = rod.rodTransform.position;
+        float totalDistance = Vector3.Distance(startPos, targetPosition);
+
         while (Vector3.Distance(rod.rodTransform.position, targetPosition) > 0.01f)
         {
             rod.rodTransform.position = Vector3.MoveTowards(rod.rodTransform.position, targetPosition, speed * Time.deltaTime);
+            
+            rod.insertionDepth = 1 - Vector3.Distance(rod.rodTransform.position, targetPosition) / totalDistance;
+
             yield return null;
         }
         rod.rodTransform.position = targetPosition;
+
+        rod.insertionDepth = rod.isInserted ? 1f : 0f;
     }
 }
 

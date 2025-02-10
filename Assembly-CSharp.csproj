@@ -64,12 +64,14 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.0.32f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Reactor\ColdWaterTube.cs" />
     <Compile Include="Assets\Scripts\Reactor\ControlRodManager.cs" />
     <Compile Include="Assets\Scripts\Reactor\FuelRodColorController.cs" />
     <Compile Include="Assets\Scripts\Reactor\FuelRodManager.cs" />
     <Compile Include="Assets\Scripts\Steam Generator\SteamGenerator.cs" />
     <Compile Include="Assets\Scripts\Reactor\FuelRod.cs" />
     <Compile Include="Assets\Scripts\Turbina y Generador\HeliceGenerador.cs" />
+    <Compile Include="Assets\Scripts\Reactor\Neutron.cs" />
     <Compile Include="Assets\Scripts\Turbina y Generador\TubeRotation.cs" />
     <Compile Include="Assets\Scripts\Canvas\canvasTexto.cs" />
     <Compile Include="Assets\Scripts\Reactor\WaterSimulation.cs" />
@@ -82,7 +84,11 @@
     <Compile Include="Assets\Scripts\Steam Generator\FreeCamController.cs" />
     <Compile Include="Assets\Scripts\Reactor\VarillaTemperature.cs" />
     <Compile Include="Assets\Scripts\Reactor\ReactorSensors.cs" />
+<<<<<<< Updated upstream
     <Compile Include="Assets\Scripts\Turbina y Generador\TurbineController.cs" />
+=======
+    <Compile Include="Assets\Scripts\Reactor\NeutronGenerator.cs" />
+>>>>>>> Stashed changes
     <Compile Include="Assets\Scripts\Reactor\GeneradorVarillas.cs" />
     <Compile Include="Assets\Scripts\Turbina y Generador\TuboGenerador.cs" />
   </ItemGroup>

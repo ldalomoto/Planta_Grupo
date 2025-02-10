@@ -108,8 +108,15 @@ public class WaterSimulation : MonoBehaviour
         if (waterMaterial != null)
         {
             waterMaterial.SetColor("_BaseColor", waterColor);
-            float alpha = Mathf.Lerp(0.9f, 0.3f, thermalT);
+            //float alpha = Mathf.Lerp(0.9f, 0.3f, thermalT);
+            float alpha = Mathf.Lerp(0.9f, 0.8f, Mathf.Pow(thermalT, 0.5f)); // Atenúa el efecto térmico
+
             waterColor.a = alpha;
+            //waterColor.a = 0.05f; // Siempre muy transparente
+
+            //Color transparentColor = new Color(0.7f, 0.9f, 1f, 0.05f);  // Último valor define transparencia (0.05 casi invisible)
+            //waterMaterial.SetColor("_BaseColor", transparentColor);
+
             waterMaterial.SetColor("_BaseColor", waterColor);
 
             Color emissionColor = Color.Lerp(Color.black, waterColor, thermalT * 0.6f);
@@ -118,7 +125,8 @@ public class WaterSimulation : MonoBehaviour
             waveHeight = Mathf.Lerp(0.05f, 0.2f, thermalT);
             waveSpeed = Mathf.Lerp(2f, 5f, thermalT);
 
-            waterMaterial.SetFloat("_Smoothness", Mathf.Lerp(0.9f, 0.5f, thermalT));
+            //waterMaterial.SetFloat("_Smoothness", Mathf.Lerp(0.9f, 0.5f, thermalT));
+            waterMaterial.SetFloat("_Smoothness", Mathf.Lerp(0.9f, 0.8f, thermalT));
         }
 
         // **Reducir el tamaño de la cápsula conforme crecen las olas**

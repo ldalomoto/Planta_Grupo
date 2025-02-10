@@ -9,7 +9,11 @@ onBoardingDoNotAskAgain = true
 showPackageIndexes = false
 showStatusBar = false
 scopes = {
+<<<<<<< Updated upstream
 	"picker_window_position_offset.075BCD15" = "-61,59998;177,6;320;550,4"
+=======
+	"picker_window_position_offset.075BCD15" = "-17;131;320;550"
+>>>>>>> Stashed changes
 	"picker_visibility_flags.075BCD15" = "264"
 	"picker_item_size.075BCD15" = "96"
 	"picker_inspector.075BCD15" = "0"
