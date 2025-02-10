@@ -69,18 +69,17 @@
     <Compile Include="Assets\Scripts\Reactor\FuelRodManager.cs" />
     <Compile Include="Assets\Scripts\Steam Generator\SteamGenerator.cs" />
     <Compile Include="Assets\Scripts\Reactor\FuelRod.cs" />
-    <Compile Include="Assets\Scripts\Reactor\ReactorCore.cs" />
     <Compile Include="Assets\Scripts\Turbina y Generador\HeliceGenerador.cs" />
     <Compile Include="Assets\Scripts\Turbina y Generador\TubeRotation.cs" />
     <Compile Include="Assets\Scripts\Canvas\canvasTexto.cs" />
     <Compile Include="Assets\Scripts\Reactor\WaterSimulation.cs" />
     <Compile Include="Assets\Scripts\Reactor\control.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
+    <Compile Include="Assets\Scripts\Reactor\CoolantSystem.cs" />
     <Compile Include="Assets\Scripts\Turbina y Generador\HelixRotation.cs" />
-    <Compile Include="Assets\Scripts\Reactor\NeutronSimulation.cs" />
     <Compile Include="Assets\Scripts\Steam Generator\FreeCamController.cs" />
-    <Compile Include="Assets\Scripts\ReactorSimulator.cs" />
     <Compile Include="Assets\Scripts\Reactor\VarillaTemperature.cs" />
+    <Compile Include="Assets\Scripts\Reactor\ReactorSensors.cs" />
     <Compile Include="Assets\Scripts\Reactor\GeneradorVarillas.cs" />
     <Compile Include="Assets\Scripts\Turbina y Generador\TuboGenerador.cs" />
   </ItemGroup>
@@ -592,6 +591,14 @@
     </Reference>
     <Reference Include="Mono.Cecil">
       <HintPath>Library\PackageCache\com.unity.nuget.mono-cecil\Mono.Cecil.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.Android.Types">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\6000.0.32f1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Types.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.Android.Gradle">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\6000.0.32f1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Gradle.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="mscorlib">
@@ -1224,6 +1231,10 @@
     </Reference>
     <Reference Include="Unity.Performance.Profile-Analyzer.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.Performance.Profile-Analyzer.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.2D.Sprite.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.RenderPipelines.GPUDriven.Runtime">

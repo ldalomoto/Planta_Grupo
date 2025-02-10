@@ -103,6 +103,15 @@ public class control : MonoBehaviour
         }
     }
 
+    public int GetInsertedRodCount()
+    {
+        int count = 0;
+        foreach(ControlRod rod in controlRods){
+            if(rod.isInserted) count++;
+        }
+        return count;
+    }
+
     IEnumerator MoveRod(ControlRod rod, Vector3 targetPosition)
     {
         while (Vector3.Distance(rod.rodTransform.position, targetPosition) > 0.01f)
