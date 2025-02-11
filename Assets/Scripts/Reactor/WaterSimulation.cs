@@ -109,7 +109,7 @@ public class WaterSimulation : MonoBehaviour
         {
             waterMaterial.SetColor("_BaseColor", waterColor);
             //float alpha = Mathf.Lerp(0.9f, 0.3f, thermalT);
-            float alpha = Mathf.Lerp(0.9f, 0.8f, Mathf.Pow(thermalT, 0.5f)); // Atenúa el efecto térmico
+            float alpha = Mathf.Lerp(0.9f, 0.9f, Mathf.Pow(thermalT, 0.5f)); // Atenúa el efecto térmico
 
             waterColor.a = alpha;
             //waterColor.a = 0.05f; // Siempre muy transparente
