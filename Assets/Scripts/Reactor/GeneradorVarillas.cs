@@ -6,14 +6,14 @@ public class GeneradorVarillas : MonoBehaviour
     public int totalVarillas = 216;
     private float radioNucleo;
     private float alturaNucleo;
-    private float temperatura = 300f; // Temperatura inicial del refrigerante
-    private float incrementoTemperatura = 10f; // Incremento de temperatura por segundo
+    //private float temperatura = 300f; // Temperatura inicial del refrigerante
+    //private float incrementoTemperatura = 10f; // Incremento de temperatura por segundo
     
     private FuelRodManager fuelRodManager;
 
     void Start()
     {
-        fuelRodManager = FindObjectOfType<FuelRodManager>();
+        fuelRodManager = FindFirstObjectByType<FuelRodManager>();
 
         // Obtener el tamaño del cilindro automáticamente
         radioNucleo = GetComponent<Collider>().bounds.extents.x - 5; // Radio basado en el tamaño del cilindro
