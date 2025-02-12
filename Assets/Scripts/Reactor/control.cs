@@ -17,7 +17,8 @@ public class control : MonoBehaviour
     {
         public Transform rodTransform;
         public bool isInserted = false;
-        public float neutronAbsorptionEfficiency = 0.006f;
+        //public float neutronAbsorptionEfficiency = 0.006f;
+        public float neutronAbsorptionEfficiency = 0.015f;
         public int rodID = 0;
 
         public float insertionDepth; // 0-1

@@ -51,7 +51,7 @@ public class WaterSimulation : MonoBehaviour
 
         // Inicializar material del agua
         waterMaterial = GetComponent<Renderer>().material;
-        fuelRodManager = FindObjectOfType<FuelRodManager>();
+        fuelRodManager = FindFirstObjectByType<FuelRodManager>();
         
         waterMaterial = Material.Instantiate(waterMaterial);
         GetComponent<Renderer>().material = waterMaterial;
