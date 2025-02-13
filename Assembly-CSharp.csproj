@@ -90,6 +90,7 @@
     <Compile Include="Assets\Scripts\Turbina y Generador\TurbineController.cs" />
     <Compile Include="Assets\Scripts\Reactor\GeneradorVarillas.cs" />
     <Compile Include="Assets\Scripts\HotWaterTube.cs" />
+    <Compile Include="Assets\Scripts\PlantaNuclear\CamaraController.cs" />
     <Compile Include="Assets\Scripts\Turbina y Generador\TuboGenerador.cs" />
   </ItemGroup>
   <ItemGroup>
